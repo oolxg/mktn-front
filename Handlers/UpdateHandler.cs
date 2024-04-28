@@ -30,8 +30,7 @@ namespace MakeathonBot.Handlers
                     await botClient.SendTextMessageAsync(
                         chatId: message.Chat.Id,
                         text: "[Type a message to start dialog with DriveMate AI]",
-                        cancellationToken: cancellationToken,
-                        parseMode: ParseMode.Markdown
+                        cancellationToken: cancellationToken
                     );
                     return;
                 case "/history":
@@ -70,7 +69,7 @@ namespace MakeathonBot.Handlers
             }
             catch (Exception e)
             {
-                await Task.Delay(3000);
+                await Task.Delay(10_000, CancellationToken.None);
 
                 try
                 {
