@@ -1,7 +1,7 @@
 ﻿using MakeathonBot.Handlers;
 using Telegram.Bot;
 
-const string botToken = "7012923654:AAGjUfGdayBJ9LS5PxZZFZD_zWWmYHZceMw";
+var botToken = System.Environment.GetEnvironmentVariable("TG_BOT_TOKEN")!;
 
 var botClient = new TelegramBotClient(botToken);
 
